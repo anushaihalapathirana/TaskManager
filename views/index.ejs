@@ -1,0 +1,24 @@
+<html>
+<form method="post", action="/task/add">
+
+<label> Add Tasks</label>
+<input type="text" name="task" id="task">
+<input type="submit" name="add" id="add" value="add to list">
+
+</form>
+<%= title %>
+
+<form method="POST" action="/task/delete">
+    <ul>
+    <% task.forEach(function(t){ %>
+        <li>
+            <label>
+                <input type="checkbox" name="task" value="<%= t %>" class="del">
+                <span> <%= t%>  </span>
+            </label>
+        </li>
+    <% }) %>
+    </ul>
+    <input type="submit" name="add" id="add" value="Delete">
+</form>
+</html>
